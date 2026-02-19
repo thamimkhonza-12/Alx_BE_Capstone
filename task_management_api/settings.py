@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-v9t-1+myh=!hk=x%1t$yfz!8t)!r@v67j_jrgn)#zog1x1i$c*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -41,6 +43,8 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'users',
     'tasks',
+    'django_filters',
+
 ]
 
 MIDDLEWARE = [
@@ -126,7 +130,17 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
+
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ],
+
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend'
+    ]
 }
