@@ -1,25 +1,23 @@
-from rest_framework import generics, permissions
+from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
 from .models import Task
 from .serializers import TaskSerializer
 
 
-class TaskListCreateView(generics.ListCreateAPIView):
+class TaskListCreate(generics.ListCreateAPIView):
     serializer_class = TaskSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        # FIXED: use user instead of owner
         return Task.objects.filter(user=self.request.user)
 
     def perform_create(self, serializer):
-        # FIXED: use user instead of owner
         serializer.save(user=self.request.user)
 
 
-class TaskRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
+class TaskDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = TaskSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        # FIXED: use user instead of owner
         return Task.objects.filter(user=self.request.user)
