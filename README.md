@@ -15,10 +15,12 @@ This is a RESTful API built with Django and Django REST Framework.
 - Django REST Framework
 - SQLite
 
-# Setup Instructions
+# API ENDPOINTS
 
-1. Clone the repository
-2. Install requirements
-3. Run migrations
-4. Run server
+## Live Endpoints
 
+- <https://ThamiDlamini544.pythonanywhere.com/>
+- <https://ThamiDlamini544.pythonanywhere.com/api/users/register/>
+- <https://ThamiDlamini544.pythonanywhere.com/api/tasks/>
+- <https://ThamiDlamini544.pythonanywhere.com/api-auth/login/>
+- <https://ThamiDlamini544.pythonanywhere.com/admin/>
