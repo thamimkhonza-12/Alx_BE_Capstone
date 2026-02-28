@@ -146,3 +146,6 @@ REST_FRAMEWORK = dict(DEFAULT_AUTHENTICATION_CLASSES=[
 }, DEFAULT_FILTER_BACKENDS=[
     'django_filters.rest_framework.DjangoFilterBackend'
 ])
+
+LOGIN_REDIRECT_URL = '/api/tasks/'
+LOGOUT_REDIRECT_URL = '/api/tasks/'
