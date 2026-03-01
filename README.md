@@ -21,6 +21,6 @@ This is a RESTful API built with Django and Django REST Framework.
 
 - <https://ThamiDlamini544.pythonanywhere.com/>
 - <https://ThamiDlamini544.pythonanywhere.com/api/users/register/>
-- <https://ThamiDlamini544.pythonanywhere.com/api/tasks/>
 - <https://ThamiDlamini544.pythonanywhere.com/api-auth/login/>
+- <https://ThamiDlamini544.pythonanywhere.com/api/tasks/>
 - <https://ThamiDlamini544.pythonanywhere.com/admin/>
